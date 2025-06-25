@@ -3,7 +3,7 @@ from .models import Board
 # Register your models here.
 @admin.register(Board)
 class BoardAdmin(admin.ModelAdmin):
-    list_display = ('title', 'writer', 'date', 'likes', 'content', 'create_at', 'updated_at')
+    list_display = ('title', 'writer', 'date', 'likes', 'content', 'created_at', 'updated_at')
     list_filter = ('date', 'writer')
     search_fields = ('title', 'content')
     ordering = ('-date',)
