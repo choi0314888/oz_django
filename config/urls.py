@@ -18,8 +18,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from feeds import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("feeds/", include("feeds.urls"))
-]
+    path("api/v1/feeds/", include("feeds.urls")), 
+    path("api/v1/users/", include("users.urls")),
+
+    # path("api/v2/feeds/", include("feeds.urls")), 
+    # path("api/v3/feeds/", include("feeds.urls")), 
+    # path("api/v2/users/", include("users.urls")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

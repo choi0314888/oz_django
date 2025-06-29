@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "boards.apps.BoardsConfig",
-    "users.apps.UsersConfig"
+    "users.apps.UsersConfig",
+    "reviews.apps.ReviewsConfig",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -124,3 +126,6 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.user"
+MEDIA_ROOT = "images"
+MEDIA_URL = "images/"
+
